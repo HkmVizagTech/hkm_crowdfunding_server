@@ -22,4 +22,6 @@ app.get("/health", (req, res) => {
   res.status(200).json({ status: "ok" });
 });
 
+import { errorHandler } from "./utils/handlers.js";
+app.use(errorHandler);
 export default app;

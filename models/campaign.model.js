@@ -29,6 +29,16 @@ const campaignSchema = new mongoose.Schema(
         required: true,
       },
     },
+    campaignImage: {
+      filename: {
+        type: String,
+        required: true,
+      },
+      url: {
+        type: String,
+        required: true,
+      },
+    },
     sections: [
       {
         type: {
