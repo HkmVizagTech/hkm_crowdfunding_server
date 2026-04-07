@@ -6,7 +6,6 @@ const campaignSchema = new mongoose.Schema(
       type: String,
       required: true,
       trim: true,
-      unique: true,
       index: true,
     },
     slug: {
@@ -22,21 +21,22 @@ const campaignSchema = new mongoose.Schema(
     banner: {
       filename: {
         type: String,
-        required: true,
       },
       url: {
         type: String,
-        required: true,
       },
+    },
+    campaignerLayout: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "CampaignerLayout",
+      required: true,
     },
     campaignImage: {
       filename: {
         type: String,
-        required: true,
       },
       url: {
         type: String,
-        required: true,
       },
     },
     sections: [

@@ -25,19 +25,24 @@ const campaignerLayoutSchema = new mongoose.Schema(
       {
         sevaName: {
           type: String,
+          default: null,
         },
         sevaDescription: {
           type: String,
+          default: null,
         },
         sevaAmount: {
           type: Number,
+          default: null,
         },
         sevaImage: {
           filename: {
             type: String,
+            default: null,
           },
           url: {
             type: String,
+            default: null,
           },
         },
       },
@@ -48,11 +53,9 @@ const campaignerLayoutSchema = new mongoose.Schema(
         type: {
           type: String,
           enum: ["text", "quote", "gallery", "video", "highlights"],
-          required: true,
         },
         content: {
           type: mongoose.Schema.Types.Mixed,
-          required: true,
         },
       },
     ],

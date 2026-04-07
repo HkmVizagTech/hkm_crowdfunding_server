@@ -21,8 +21,15 @@ app.use(cookieParser());
 app.get("/health", (req, res) => {
   res.status(200).json({ status: "ok" });
 });
+
+// App Routes
 import campaignRouter from "./routes/campaign.routes.js";
+import campaignerLayoutRouter from "./routes/campaignerLayout.routes.js";
 app.use("/api/campaign", campaignRouter);
+app.use("/api/campaigner",campaignerLayoutRouter)
+
+
+// Error handler 
 import { errorHandler } from "./utils/handlers.js";
 app.use(errorHandler);
 export default app;
